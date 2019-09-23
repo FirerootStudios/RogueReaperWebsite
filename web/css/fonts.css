@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'D-DIN';
+    font-weight: normal;
+    src: url('../fonts/D-DIN/D-DIN.otf'); /* IE9 Compat Modes */
+    src: url('../fonts/D-DIN/D-DIN.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/D-DIN/D-DIN.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/D-DIN/D-DIN.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/D-DIN/D-DIN.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'D-DIN';
+    font-weight: bold;
+    src: url('../fonts/D-DIN/D-DIN-Bold.otf'); /* IE9 Compat Modes */
+    src: url('../fonts/D-DIN/D-DIN-Bold.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/D-DIN/D-DIN-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/D-DIN/D-DIN-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/D-DIN/D-DIN-Bold.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'Calibre';
+    font-weight: normal;
+    src: url('../fonts/Calibre/Calibre-Regular.ttf'); /* IE9 Compat Modes */
+    src: url('../fonts/Calibre/Calibre-Regular.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Calibre/Calibre-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Calibre/Calibre-Regular.woff') format('woff') /* Pretty Modern Browsers */
+}
+@font-face {
+    font-family: 'Calibre';
+    font-weight: bold;
+    src: url('../fonts/Calibre/Calibre-Semibold.ttf'); /* IE9 Compat Modes */
+    src: url('../fonts/Calibre/Calibre-Semibold.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Calibre/Calibre-Semibold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Calibre/Calibre-Semibold.woff') format('woff') /* Pretty Modern Browsers */
+}
+@font-face {
+    font-family: 'Cemong';
+    font-weight: normal;
+    src: url('../fonts/Cemong.ttf'); /* IE9 Compat Modes */
+}
