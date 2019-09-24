@@ -3,6 +3,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="../web/css/main.css">
         <link rel="stylesheet" type="text/css" href="../web/css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="../web/css/fontawesome/all.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <title>Rogue Reaper: Awakening</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -12,7 +14,6 @@
                 <div id="image">
                     <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
                 </div>
-                <div id="overlay"></div>
                 <div id="text">
                     <h1>ROGUE REAPER</h1>
                     <p>
@@ -20,24 +21,92 @@
                         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
                         sed diam voluptua. At vero
                     </p>
-                    <button id="download">DOWNLOAD NOW</button>
+                    <button id="download">
+                        <a href="#">DOWNLOAD NOW</a>
+                    </button>
                 </div>
             </main>
         </header>
-        {% block main %}
-
-        {% endblock %}
-        
-        {# Copyright #}
-        {# {% set startYear = 2019 %} #}
-        {% set currentYear = now.year %}
-        {# {% set copyrightYears = startYear ~ ' - ' ~ currentYear %} #}
-
-        {# <footer id="contact">
+        <div id="overlay"></div>
+        <div id="about">
+            <h1>ABOUT</h1>
             <main>
-                <img src="../web/images/FireRoot-logo-final-text.png">
-                {# <p>&copy; {{ currentYear }} Fireroot Studios. All Rights Reserved</p> #}
-            {# </main>
-        </footer> #}
+                <div id="text">
+                    <h1>Play as the daughter of Death</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                    </p>
+                </div>
+                <div id="image">
+                    <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
+                </div>
+            </main>
+            <div id="overlay_bottom"></div>
+        </div>
+        <div class="container" id="banners">
+            <div class="banner" id="first">
+                <div id="text">
+                    <h1>Play as the daughter of Death</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                        sed diam voluptua. At vero
+                    </p>
+                </div>
+            </div>
+            <div class="banner" id="second">
+                <div id="text">
+                    <h1>Play as the daughter of Death</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                        sed diam voluptua. At vero
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="news">
+            <div class="row">
+                <h1 class="newsHeader">Latest News</h1>
+            </div>
+
+            <div class="row">
+                {% for entry in craft.entries.section('news').all() %}
+                    <div class="newsItem">
+                        <div class="newsImage">
+                            <img src="" alt="">
+                        </div>
+                        <div class="newsText">
+                            <h3 class="newsItemHeader">{{ entry.title }}</h3>
+                            <span class="newsContent">
+                                {{entry.newsBody}}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <footer>
+            <h1>Follow Rogue Reaper: Awakening</h1>
+            <div class="row" id="socials">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <img id="logo" src="../web/images/FireRoot-logo-final-text.png" alt="Fireroot Logo">
+            <nav id="footer_nav">
+                <a href="#">ABOUT</a> | 
+                <a href="#">CONTACT US</a> | 
+                <a href="#">PRESS</a> 
+            </nav>
+            <span class="copyright">© 2019 Fireroot Studios B.V. Trademarks are the property of their respective owners. All Rights Reserved.</span>
+        </footer>
     </body>
 </html>
