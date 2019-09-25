@@ -258,13 +258,13 @@ footer #logo {
 #footer_nav {
     font-family: 'Source Sans Pro', sans-serif;
     margin-top: 25px;
+    font-size: 1.4rem;
+    color: white;
 }
 
 #footer_nav a {
     text-decoration: none;
     color: inherit;
-    font-size: 1.4rem;
-    color: white;
 }
 
 #footer_nav a:hover {
