@@ -49,7 +49,7 @@
         <div class="container" id="banners">
             {% for entry in craft.entries.section('banners').all() %}
                 {% set image = entry.featuredBannerImage.one().url %}
-                <div class="banner" id="first" style="background: url({{image}})">
+                <div class="banner" style="background: url('{{image}}')">
                     <div id="text">
                         <h1>{{entry.title}}</h1>
                         <p>{{entry.bannerText}}</p>

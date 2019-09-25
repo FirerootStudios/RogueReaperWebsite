@@ -5,10 +5,6 @@
 
 /* ----- HEADER ----- */
 
-body  {
-    height: 4665px;
-}
-
 header {
     height: 100vh;
 }
@@ -142,6 +138,19 @@ header main #download:hover {
 #banners {
     margin-top: 1000px;
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner:nth-of-type(odd) #text {
+    padding-left: 595px;
+    margin-right: 80px;
+}
+
+.banner:nth-of-type(even) #text {
+    padding-right: 595px;
+    margin-left: 80px;
 }
 
 .banner {
@@ -162,25 +171,6 @@ header main #download:hover {
     font-size: 2.5rem;
     font-weight: 100;
     margin-top: 20px;
-}
-
-#first {
-    /* background: url(../images/enemies_rat_social.png); */
-    text-align: right;
-}
-
-#first #text {
-    padding-left: 595px;
-    margin-right: 80px;
-}
-
-#second {
-    /* background: url(../images/spoopyamsterdam.png); */
-}
-
-#second #text {
-    padding-right: 595px;
-    margin-left: 80px;
 }
 
 /* ----- NEWS ----- */
