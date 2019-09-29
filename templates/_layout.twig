@@ -67,10 +67,11 @@
                 {% for entry in craft.entries.section('news').limit(4) %}
                     <div class="newsItem">
                         <div class="newsImage">
-                            <img src="" alt="">
+                            {% set image = entry.featuredNewsImage.one().url %}
+                            <a href="{{entry.url}}"><img src="{{image}}" alt=""></a>
                         </div>
                         <div class="newsText">
-                            <h3 class="newsItemHeader">{{ entry.title }}</h3>
+                            <a href="{{entry.url}}"><h3 class="newsItemHeader">{{ entry.title }}</h3></a>
                             <span class="newsContent">
                                 {{entry.newsBody}}
                             </span>
@@ -95,7 +96,17 @@
                 <a href="https://www.firerootstudios.com/" target="_blank">CONTACT US</a> | 
                 <a href="https://www.firerootstudios.com/" target="_blank">PRESS</a> 
             </nav>
-            <span class="copyright">© 2019 Fireroot Studios B.V. Trademarks are the property of their respective owners. All Rights Reserved.</span>
+
+            {% set startYear = 2019 %}
+            {% set currentYear = now.year %}
+
+            {% if startYear == currentYear %}
+                {% set copyrightYears = startYear %}
+            {% else %}
+                {% set copyrightYears = startYear ~ ' - ' ~ currentYear %}
+            {% endif %}
+
+            <span class="copyright">© {{copyrightYears}} Fireroot Studios B.V. Trademarks are the property of their respective owners. All Rights Reserved.</span>
         </footer>
     </body>
 </html>
