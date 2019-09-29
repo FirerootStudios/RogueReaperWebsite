@@ -1,3 +1,4 @@
+ {% do view.registerAssetBundle("plugins\\dolphiq\\iconpicker\\assets\\sharedAsset") %}
 <!doctype html>
 <html>
     <head>
@@ -84,11 +85,9 @@
         <footer>
             <h1>Follow Rogue Reaper: Awakening</h1>
             <div class="row" id="socials">
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                {% for entry in craft.entries.section('socials').all() %}
+                    <a href="{{entry.socialLink}}" target="_blank">{{ entry.socialIcon.iconSpan|raw }}</a>
+                {% endfor %}
             </div>
             <img id="logo" src="../web/images/FireRoot-logo-final-text.png" alt="Fireroot Logo">
             <nav id="footer_nav">

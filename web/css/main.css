@@ -248,14 +248,13 @@ footer h1 {
 }
 
 #socials {
-    color: white;
     font-size: 3rem;
     width: 25%;
     justify-content: space-evenly;
     margin-top: 25px;
 }
 
-#socials i {
+#socials span {
     margin: 0;
     color: white;
 }
