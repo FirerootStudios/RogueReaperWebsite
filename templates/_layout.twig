@@ -4,7 +4,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="../web/css/main.css">
         <link rel="stylesheet" type="text/css" href="../web/css/fonts.css">
-        <link rel="stylesheet" type="text/css" href="../web/css/fontawesome/all.css">
+        {# <link rel="stylesheet" type="text/css" href="../web/css/fontawesome/all.css"> #}
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <title>Rogue Reaper: Awakening</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +22,15 @@
                         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
                         sed diam voluptua. At vero
                     </p>
-                    <button id="download">
-                        <a href="#">DOWNLOAD NOW</a>
-                    </button>
+                    {# <button id="download">
+                        <a href="#">WISHLIST NOW</a>
+                    </button> #}
                 </div>
             </main>
         </header>
+        
         <div id="overlay"></div>
+
         <div id="about">
             <h1>ABOUT</h1>
             <main>
@@ -47,6 +49,7 @@
             </main>
             <div id="overlay_bottom"></div>
         </div>
+
         <div class="container" id="banners">
             {% for entry in craft.entries.section('banners').all() %}
                 {% set image = entry.featuredBannerImage.one().url %}
