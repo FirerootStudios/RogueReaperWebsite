@@ -182,6 +182,7 @@ header main #download:hover {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background-image: url('../images/greybg.jpg');
 }
 
 .row {
@@ -366,7 +367,6 @@ footer .copyright {
 
     #news {
         padding-top: 600px;
-        background-image: url('../images/greybg.jpg');
     }
 
     .newsItem {
