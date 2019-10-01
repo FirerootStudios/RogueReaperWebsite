@@ -70,6 +70,7 @@ header main #download {
     font-size: 62px;
     font-family: 'Cemong';
     float: right;
+    display: none;
 }
 
 header main #download a {
@@ -141,6 +142,7 @@ header main #download:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: url(../images/greybg.jpg);
 }
 
 .banner:nth-of-type(odd) #text {
@@ -285,4 +287,117 @@ footer .copyright {
     color: white;
     padding: 25px 0;
     font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* ----- RESPONSIVE ----- */
+/* Mobile */
+@media (max-width: 414px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    header main #text h1:after {
+        font-size: 1.5rem;
+    }
+
+    header main #download {
+        display: block;
+        width: 180px;
+        height: 40px;
+        font-size: 1.6rem;
+        float: none;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    main img {
+        width: 400px;
+    }
+
+    main #text {
+        margin-top: -100px;
+    }
+
+    main #text h1 {
+        font-size: 3.6rem;
+    }
+
+    main #text p {
+        display: none;
+    }
+
+    #overlay {
+        height: 600px;
+    }
+
+    #overlay_bottom {
+        margin-top: 685px;
+    }
+
+    #banners {
+        margin-top: 0px;
+        padding-top: 100px;
+        background: black;
+    }
+
+    .banner h1 {
+        font-size: 1.75rem;
+    }
+
+    .banner p {
+        font-size: 1.5rem;
+    }
+
+    .banner:nth-of-type(odd) #text {
+        padding: 20px;
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .banner:nth-of-type(even) #text {
+        padding: 20px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    #news {
+        padding-top: 600px;
+        background-image: url('../images/greybg.jpg');
+    }
+
+    .newsItem {
+        margin-bottom: 30px;
+    }
+
+    .newsHeader {
+        font-size: 4rem;
+        margin: 0 0 30px 0;
+    }
+
+    .newsImage {
+        height: 250px;
+        width: 350px;
+    }
+
+    .newsText {
+        max-width: 350px;
+        text-align: center;
+        padding: 0px 20px;
+    }
+
+    footer h1 {
+        font-size: 1.5rem;
+    }
+
+    #socials {
+        width: 90%;
+    }
+
+    .copyright {
+        text-align: center;
+    }
 }
