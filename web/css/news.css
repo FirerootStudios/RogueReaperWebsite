@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    padding: 140px 0px 0px 130px;
+    background-image: url('../images/greybg.jpg');
+}
+
+.news {
+    max-width: 1100px;
+}
+
+.news h1, .recent h1 {
+    font-family: 'Cemong';
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+}
+
+.news img {
+    width: 100%;
+    height: 400px;
+}
+
+.news p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5rem;
+    margin: 15px 0 150px 0;
+}
+
+.recent {
+    width: 360px;
+}
+    
+.recent .recentNewsItem {
+    display: flex;
+    width: 100%;
+    height: 130px;
+    border: 1px solid black;
+    background: white;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.recent .recentNewsImage {
+    min-width: 120px;
+    max-width: 120px;
+    height: 82px;
+    margin-left: 15px;
+    border: 1px solid black;
+}
+
+.recent .recentNewsImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.recent .recentNewsText {
+    padding: 0px 15px;
+    text-decoration: none;
+}
+
+.recent .recentNewsText a {
+    text-decoration: none;
+}
+
+.recent .recentNewsText .recentNewsItemHeader {
+    font-size: 1.1rem;
+    color: black;
+} 
+
+@media only screen and (max-width: 1024px) {
+    nav.responsive h1 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        padding: 0;
+        display: block;
+        padding: 0px 15px 0px 15px;
+    }
+
+    .news {
+        padding: 50px 0px 50px 0px;
+    }
+    
+    .news h1 {
+        font-size: 2.4rem;
+    }
+
+    .news img {
+        max-height: 140px;
+    }
+    
+    .news p {
+        font-size: 1.1rem;
+        margin-bottom: 0px;
+    }   
+
+    .recent {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .recent .recentNewsText {
+        padding: 0px 26px;
+        text-decoration: none;
+    }
+}
+

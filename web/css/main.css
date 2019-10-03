@@ -4,9 +4,21 @@
 }
 
 /* ----- HEADER ----- */
-
 header {
     height: 100vh;
+}
+
+nav {
+    height: 60px;
+    border: 1px solid black;
+    align-items: center;
+    display: none;
+    width: 100%;
+}
+
+nav h1 {
+    font-family: 'Cemong';
+    font-size: 2.4rem;
 }
 
 main {
@@ -85,7 +97,7 @@ header main #download:hover {
 
 #overlay {
     width: 100%;
-    background: url(../images/shadow_above.png) no-repeat;
+    background: url(../images/shadow_above.png) 0 0 no-repeat / cover;
     position: absolute;
     bottom: 0;
     height: 640px;
@@ -129,13 +141,12 @@ header main #download:hover {
 
 #overlay_bottom {
     width: 100%;
-    background: url(../images/shadow_below.png) no-repeat;
+    background: url(../images/shadow_below.png) 0 0 no-repeat / cover;
     position: absolute;
     height: 100%;
 }
 
 /* ----- BANNERS ----- */
-
 #banners {
     margin-top: 1000px;
     height: 80vh;
@@ -231,7 +242,7 @@ header main #download:hover {
 }
 
 .newsContent {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -291,14 +302,40 @@ footer .copyright {
 }
 
 /* ----- RESPONSIVE ----- */
-/* Mobile */
-@media (max-width: 414px) {
+@media only screen and (max-width: 1024px) {
     html, body {
         overflow-x: hidden;
     }
 
     main {
-        flex-direction: column-reverse;
+        flex-direction: row;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.responsive {
+        display: flex;
+        /* position: fixed; */
+    }
+
+    nav.responsive h1 {
+        max-width: 200px;
+        margin-left: 15px;
+    }
+
+    nav.responsive i {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+
+    nav.responsive ul {
+        display: none;
+    }
+
+    header {
+        height: 85vh;
     }
 
     header main #text h1:after {
@@ -320,19 +357,33 @@ footer .copyright {
     }
 
     main #text {
-        margin-top: -100px;
+        margin-top: 0px;
     }
 
     main #text h1 {
         font-size: 3.6rem;
     }
 
-    main #text p {
+    header main #text p {
         display: none;
     }
 
     #overlay {
-        height: 600px;
+        height: 30%;
+    }
+
+    #about h1 {
+        padding-top: 100px;
+    }
+
+    #about main #text h1 {
+        font-size: 1.5rem;
+    }
+
+    #about main #text p {
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 0px 70px;
     }
 
     #overlay_bottom {
@@ -341,7 +392,7 @@ footer .copyright {
 
     #banners {
         margin-top: 0px;
-        padding-top: 100px;
+        padding-top: 200px;
         background: black;
     }
 
@@ -399,5 +450,11 @@ footer .copyright {
 
     .copyright {
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    main {
+        flex-direction: column-reverse;
     }
 }

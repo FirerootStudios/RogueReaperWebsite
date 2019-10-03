@@ -1,1 +1,77 @@
 {% extends '_layout' %}
+{% block main %}
+        <header>
+            <main>
+                <div id="image">
+                    <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
+                </div>
+                <div id="text">
+                    <h1>ROGUE REAPER</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                        sed diam voluptua. At vero
+                    </p>
+                    <button id="download">
+                        <a href="#">WISHLIST NOW</a>
+                    </button>
+                </div>
+            </main>
+        </header>
+        
+        <div id="overlay"></div>
+
+        <section id="about">
+            <h1>ABOUT</h1>
+            <main>
+                <div id="text">
+                    <h1>Play as the daughter of Death</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                    </p>
+                </div>
+                <div id="image">
+                    <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
+                </div>
+            </main>
+            <div id="overlay_bottom"></div>
+        </section>
+
+        <section id="banners">
+            {% for entry in craft.entries.section('banners').all() %}
+                {% set image = entry.featuredBannerImage.one().url %}
+                <div class="banner" style="background: url('{{image}}') 0 0 no-repeat / cover">
+                    <div id="text">
+                        <h1>{{entry.title}}</h1>
+                        <p>{{entry.bannerText}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+
+        <section id="news">
+            <div class="row">
+                <h1 class="newsHeader">Latest News</h1>
+            </div>
+
+            <div class="row">
+                {% for entry in craft.entries.section('news').limit(4) %}
+                    <div class="newsItem">
+                        <div class="newsImage">
+                            {% set image = entry.featuredNewsImage.one().url %}
+                            <a href="{{entry.url}}"><img src="{{image}}" alt=""></a>
+                        </div>
+                        <div class="newsText">
+                            <a href="{{entry.url}}"><h3 class="newsItemHeader">{{ entry.title }}</h3></a>
+                            <span class="newsContent">
+                                {{entry.newsSubtext}}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+{% endblock %}

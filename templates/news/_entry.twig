@@ -1,2 +1,24 @@
-<h1>{{entry.title}}</h1>
-<p>{{entry.newsBody}}</p>
+{% extends '_layout' %}
+{% block main %}
+    <section class="container">
+        <section class="news">
+            <h1>{{entry.title}}</h1>
+            <img src="{{siteUrl}}{{entry.featuredNewsImage.one().url}}">
+            <p>{{entry.newsBody | nl2br}}</p>
+        </section>
+        <section class="recent">
+            <h1>Recent News</h1>
+            {% for entry in craft.entries.section('news').limit(4) %}
+                <div class="recentNewsItem">
+                    <div class="recentNewsImage">
+                        {% set image = entry.featuredNewsImage.one().url %}
+                        <a href="{{entry.url}}"><img src="{{siteUrl}}{{image}}" alt=""></a>
+                    </div>
+                    <div class="recentNewsText">
+                        <a href="{{entry.url}}"><h3 class="recentNewsItemHeader">{{ entry.title }}</h3></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </section>
+{% endblock %}

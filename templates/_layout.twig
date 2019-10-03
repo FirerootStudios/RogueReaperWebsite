@@ -1,90 +1,36 @@
- {% do view.registerAssetBundle("plugins\\dolphiq\\iconpicker\\assets\\sharedAsset") %}
-<!doctype html>
+{% do view.registerAssetBundle("plugins\\dolphiq\\iconpicker\\assets\\sharedAsset") %}
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../web/css/main.css">
-        <link rel="stylesheet" type="text/css" href="../web/css/fonts.css">
-        {# <link rel="stylesheet" type="text/css" href="../web/css/fontawesome/all.css"> #}
+        <link rel="stylesheet" type="text/css" href="{{siteUrl}}/css/main.css">
+        <link rel="stylesheet" type="text/css" href="{{siteUrl}}/css/news.css">
+        <link rel="stylesheet" type="text/css" href="{{siteUrl}}/css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="{{siteUrl}}/css/fontawesome/all.min.css">
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-        <title>Rogue Reaper: Awakening</title>
+        <title>Rogue Reaper</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header>
-            <main>
-                <div id="image">
-                    <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
-                </div>
-                <div id="text">
-                    <h1>ROGUE REAPER</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                        sed diam voluptua. At vero
-                    </p>
-                    <button id="download">
-                        <a href="#">WISHLIST NOW</a>
-                    </button>
-                </div>
-            </main>
-        </header>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#community">NEWS</a></li>
+                <li><a href="#games">CONTACT</a></li>
+            </ul>
+        </nav>
+        <nav class="responsive">
+            <h1>Rogue Reaper</h1>
+            <i class="far fa-bars"></i>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#community">NEWS</a></li>
+                <li><a href="#games">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        {% block main %}
+
+        {% endblock %}
         
-        <div id="overlay"></div>
-
-        <div id="about">
-            <h1>ABOUT</h1>
-            <main>
-                <div id="text">
-                    <h1>Play as the daughter of Death</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
-                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                    </p>
-                </div>
-                <div id="image">
-                    <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
-                </div>
-            </main>
-            <div id="overlay_bottom"></div>
-        </div>
-
-        <div class="container" id="banners">
-            {% for entry in craft.entries.section('banners').all() %}
-                {% set image = entry.featuredBannerImage.one().url %}
-                <div class="banner" style="background: url('{{image}}')">
-                    <div id="text">
-                        <h1>{{entry.title}}</h1>
-                        <p>{{entry.bannerText}}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-
-        <div class="container" id="news">
-            <div class="row">
-                <h1 class="newsHeader">Latest News</h1>
-            </div>
-
-            <div class="row">
-                {% for entry in craft.entries.section('news').limit(4) %}
-                    <div class="newsItem">
-                        <div class="newsImage">
-                            {% set image = entry.featuredNewsImage.one().url %}
-                            <a href="{{entry.url}}"><img src="{{image}}" alt=""></a>
-                        </div>
-                        <div class="newsText">
-                            <a href="{{entry.url}}"><h3 class="newsItemHeader">{{ entry.title }}</h3></a>
-                            <span class="newsContent">
-                                {{entry.newsBody}}
-                            </span>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-
         <footer>
             <h1>Follow Rogue Reaper: Awakening</h1>
             <div class="row" id="socials">
@@ -92,7 +38,7 @@
                     <a href="{{entry.socialLink}}" target="_blank">{{ entry.socialIcon.iconSpan|raw }}</a>
                 {% endfor %}
             </div>
-            <img id="logo" src="../web/images/FireRoot-logo-final-text.png" alt="Fireroot Logo">
+            <img id="logo" src="{{siteUrl}}/images/FireRoot-logo-final-text.png" alt="Fireroot Logo">
             <nav id="footer_nav">
                 <a href="https://www.firerootstudios.com/" target="_blank">ABOUT</a> | 
                 <a href="https://www.firerootstudios.com/" target="_blank">CONTACT US</a> | 
