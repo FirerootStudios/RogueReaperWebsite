@@ -373,10 +373,6 @@ footer .copyright {
         height: 30%;
     }
 
-    #about {
-        height: 50vh;
-    }
-
     #about h1 {
         padding-top: 50px;
     }
@@ -390,10 +386,6 @@ footer .copyright {
         font-size: 1.8rem;
         text-align: center;
         padding: 0px 70px;
-    }
-
-    #about main #image {
-        /* height: 140px; */
     }
 
     #overlay_bottom {
@@ -551,6 +543,7 @@ footer .copyright {
 
     #about h1 {
         padding-top: 100px;
+        font-size: 4rem;
     }
 
     #about main #text h1 {
@@ -564,11 +557,11 @@ footer .copyright {
     }
 
     #about main #image {
-        height: 140px;
+        height: 300px;
     }
 
     #overlay_bottom {
-        margin-top: 685px;
+        margin-top: 500px;
     }
 
     #banners {
@@ -632,5 +625,31 @@ footer .copyright {
     footer .copyright {
         text-align: center;
         font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    main img {
+        width: 300px;
+    }
+
+    #about main #text p {
+        padding: 0px 25px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner p {
+        font-size: 1.0rem;
+    }
+
+    .newsItemHeader {
+        font-size: 1.5rem;
+    }
+
+    .newsContent {
+        font-size: 0.6rem;
     }
 }
