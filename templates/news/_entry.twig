@@ -2,8 +2,11 @@
 {% block main %}
     <section class="container">
         <section class="news">
+            <a href="{{siteUrl}}" id="back">
+                <i class="far fa-chevron-left"></i> Back
+            </a>
             <h1>{{entry.title}}</h1>
-            <img src="{{siteUrl}}{{entry.featuredNewsImage.one().url}}">
+            <img src="{{siteUrl}}{{entry.mainNewsImage.one().url}}">
             <p>{{entry.newsBody | nl2br}}</p>
         </section>
         <section class="recent">

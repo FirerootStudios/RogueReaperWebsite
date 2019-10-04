@@ -25,6 +25,18 @@
     margin: 15px 0 150px 0;
 }
 
+#back {
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+}
+
+#back i {
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
 .recent {
     width: 360px;
 }

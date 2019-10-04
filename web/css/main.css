@@ -139,6 +139,16 @@ header main #download:hover {
     font-weight: 100;
 }
 
+#about main #text {
+    margin-top: 0;
+}
+
+#about main #image {
+    width: 760px;
+    height: 400px;
+    background: white;
+}
+
 #overlay_bottom {
     width: 100%;
     background: url(../images/shadow_below.png) 0 0 no-repeat / cover;
@@ -302,13 +312,14 @@ footer .copyright {
 }
 
 /* ----- RESPONSIVE ----- */
+/* Tablets */
 @media only screen and (max-width: 1024px) {
     html, body {
         overflow-x: hidden;
     }
 
     main {
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
 
     nav {
@@ -334,8 +345,174 @@ footer .copyright {
         display: none;
     }
 
-    header {
-        height: 85vh;
+    header main #text h1:after {
+        font-size: 3.5rem;
+    }
+
+    header main #download {
+        display: block;
+        font-size: 3.6rem;
+        float: none;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    main #text {
+        margin-top: 0px;
+    }
+
+    main #text h1 {
+        font-size: 8rem;
+    }
+
+    header main #text p {
+        display: none;
+    }
+
+    #overlay {
+        height: 30%;
+    }
+
+    #about {
+        height: 50vh;
+    }
+
+    #about h1 {
+        padding-top: 50px;
+    }
+
+    #about main #text h1 {
+        max-width: none;
+        font-size: 3.5rem;
+    }
+
+    #about main #text p {
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 0px 70px;
+    }
+
+    #about main #image {
+        /* height: 140px; */
+    }
+
+    #overlay_bottom {
+        margin-top: 685px;
+    }
+
+    #banners {
+        margin-top: 0px;
+        padding-top: 200px;
+        background: black;
+    }
+
+    .banner h1 {
+        font-size: 3.75rem;
+    }
+
+    .banner p {
+        font-size: 2rem;
+    }
+
+    .banner:nth-of-type(odd) #text {
+        padding: 20px;
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .banner:nth-of-type(even) #text {
+        padding: 20px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    #news {
+        padding-top: 600px;
+    }
+
+    .newsItem {
+        margin-bottom: 30px;
+    }
+
+    .newsHeader {
+        font-size: 4rem;
+        margin: 0 0 30px 0;
+    }
+
+    .newsImage {
+        height: 250px;
+        width: 350px;
+    }
+
+    .newsText {
+        max-width: 350px;
+        text-align: center;
+        padding: 0px 20px;
+    }
+
+    footer h1 {
+        font-size: 1.5rem;
+    }
+
+    #socials {
+        width: 90%;
+    }
+
+    footer .copyright {
+        text-align: center;
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main #text h1 {
+        font-size: 6rem;
+    }
+
+    main img {
+        width: 500px;
+    }
+
+    header main #text h1:after {
+        font-size: 2.5rem;
+    }
+
+    header main #download {
+        font-size: 2.6rem;
+    }
+}
+
+/* Smartphones */
+@media only screen and (max-width: 414px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.responsive {
+        display: flex;
+        /* position: fixed; */
+    }
+
+    nav.responsive h1 {
+        max-width: 200px;
+        margin-left: 15px;
+    }
+
+    nav.responsive i {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+
+    nav.responsive ul {
+        display: none;
     }
 
     header main #text h1:after {
@@ -384,6 +561,10 @@ footer .copyright {
         font-size: 0.8rem;
         text-align: center;
         padding: 0px 70px;
+    }
+
+    #about main #image {
+        height: 140px;
     }
 
     #overlay_bottom {
@@ -448,13 +629,8 @@ footer .copyright {
         width: 90%;
     }
 
-    .copyright {
+    footer .copyright {
         text-align: center;
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    main {
-        flex-direction: column-reverse;
+        font-size: 0.8rem;
     }
 }
