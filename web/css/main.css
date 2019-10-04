@@ -313,13 +313,15 @@ footer .copyright {
 
 /* ----- RESPONSIVE ----- */
 /* Tablets */
+@media only screen and (max-width: 1600px) {
+    main {
+        flex-direction: column-reverse;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     html, body {
         overflow-x: hidden;
-    }
-
-    main {
-        flex-direction: column-reverse;
     }
 
     nav {
@@ -475,7 +477,7 @@ footer .copyright {
 }
 
 /* Smartphones */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 432px) {
     html, body {
         overflow-x: hidden;
     }
