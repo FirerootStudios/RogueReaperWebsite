@@ -22,21 +22,18 @@
         <div id="overlay"></div>
 
         <section id="about">
-            <h1>ABOUT</h1>
+            {% for entry in craft.entries.section('About').all() %}
+            <h1>{{entry.aboutTitle}}</h1>
             <main>
                 <div id="text">
-                    <h1>Play as the daughter of Death</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
-                        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                    </p>
+                    <h1>{{entry.aboutHeader}}</h1>
+                    <p>{{entry.aboutText}}</p>
                 </div>
                 <div id="image">
-                    {# <img src="../web/images/lily_vector.svg" alt="Lilly Vector"> #}
+                    <img src="{{entry.aboutImage.one().url}}" alt="">
                 </div>
             </main>
+            {% endfor %} 
             <div id="overlay_bottom"></div>
         </section>
 
