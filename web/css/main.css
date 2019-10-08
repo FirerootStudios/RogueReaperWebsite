@@ -28,7 +28,7 @@ main {
 }
 
 header main {
-    background: url(../images/bgpatroon.png);
+    background: url(../images/seamlessbg.jpg);
     position: relative;
     align-items: center;
 }
@@ -41,7 +41,8 @@ main #text {
 }
 
 main #text h1 {
-    color: #393434;
+    /* color: #393434; */
+    color: white;
     font-size: 10rem;
     max-width: 761px;
     margin: 0;
@@ -122,6 +123,7 @@ header main #download:hover {
 #about main {
     background-color: black;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 #about main h1 {
@@ -142,12 +144,12 @@ header main #download:hover {
 #about main #text {
     margin-top: 0;
 }
-
+/* 
 #about main #image {
     width: 760px;
     height: 400px;
     background: white;
-}
+} */
 
 #overlay_bottom {
     width: 100%;
@@ -169,6 +171,7 @@ header main #download:hover {
 .banner:nth-of-type(odd) #text {
     padding-left: 595px;
     margin-right: 80px;
+    text-align: right;
 }
 
 .banner:nth-of-type(even) #text {
@@ -311,7 +314,7 @@ footer .copyright {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* ----- RESPONSIVE ----- */
+/* ----- RESPONSIVE PORTRAIT ----- */
 /* Tablets */
 @media only screen and (max-width: 1600px) {
     main {
@@ -558,9 +561,9 @@ footer .copyright {
         padding: 0px 70px;
     }
 
-    #about main #image {
+    /* #about main #image {
         height: 300px;
-    }
+    } */
 
     #overlay_bottom {
         margin-top: 500px;
@@ -577,7 +580,7 @@ footer .copyright {
     }
 
     .banner p {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .banner:nth-of-type(odd) #text {
@@ -653,5 +656,82 @@ footer .copyright {
 
     .newsContent {
         font-size: 0.6rem;
+    }
+}
+
+/* ----- RESPONSIVE LANDSCAPE ----- */
+@media only screen 
+and (min-device-width : 1024px) 
+and (max-device-width : 1366px) 
+and (orientation : landscape) { 
+
+    main img {
+        width: 600px;
+    }
+
+    main #text {
+        margin-top: 0;
+    }
+
+    main #text p {
+        display: none;
+    }
+
+    #overlay {
+        height: 500px;
+    }
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (orientation : landscape) { 
+
+    main {
+        flex-direction: row;
+    }
+
+    main img {
+        width: 300px;
+    }
+
+    main #text h1 {
+        font-size: 4rem;
+    }
+
+    header main #text h1:after {
+        font-size: 1.8rem;
+    }
+    
+    main #text {
+        margin-top: 0;
+    }
+
+    main #text p {
+        display: none;
+    }
+
+    header main #download {
+        height: 60px;
+        width: 200px;
+        font-size: 1.6rem;
+    }
+
+    #overlay {
+        height: 200px;
+    }
+
+    #overlay_bottom {
+        margin-top: 425px;
+    }
+
+    #about main #image {
+        width: 50%;
+        height: 200px;
+        background: white;
+    }
+
+    #about main #text h1 {
+        font-size: 2.5rem;
     }
 }
