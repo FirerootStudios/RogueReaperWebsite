@@ -12,9 +12,9 @@
                         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
                         sed diam voluptua. At vero
                     </p>
-                    <button id="download">
+                    {# <button id="download">
                         <a href="#">WISHLIST NOW</a>
-                    </button>
+                    </button> #}
                 </div>
             </main>
         </header>
@@ -30,7 +30,11 @@
                     <p>{{entry.aboutText}}</p>
                 </div>
                 <div id="image">
-                    <img src="{{entry.aboutImage.one().url}}" alt="">
+                    {% if entry.aboutImage.exists() %}
+                        <img src="{{entry.aboutImage.one().url}}" alt="">
+                    {% else %}
+                        <img src="{{siteUrl}}/images/about_default.jpg" alt="">
+                    {% endif %}
                 </div>
             </main>
             {% endfor %} 
@@ -39,7 +43,12 @@
 
         <section id="banners">
             {% for entry in craft.entries.section('banners').all() %}
-                {% set image = entry.featuredBannerImage.one().url %}
+                {% if entry.featuredBannerImage.exists() %}
+                    {% set image = entry.featuredBannerImage.one().url %}
+                {% else %}
+                    {% set image = '../web/images/banner_default.jpg' %}
+                {% endif %}
+
                 <div class="banner" style="background: url('{{image}}') 0 0 no-repeat / cover">
                     <div id="text">
                         <h1>{{entry.title}}</h1>
@@ -58,7 +67,12 @@
                 {% for entry in craft.entries.section('news').limit(4) %}
                     <div class="newsItem">
                         <div class="newsImage">
-                            {% set image = entry.featuredNewsImage.one().url %}
+                            {% if entry.featuredNewsImage.exists() %}
+                                {% set image = entry.featuredNewsImage.one().url %}
+                            {% else %}
+                                {% set image = '../web/images/featured_default.jpg' %}
+                            {% endif %}
+
                             <a href="{{entry.url}}"><img src="{{image}}" alt=""></a>
                         </div>
                         <div class="newsText">

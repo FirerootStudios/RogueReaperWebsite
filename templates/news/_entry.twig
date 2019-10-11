@@ -6,7 +6,13 @@
                 <i class="far fa-chevron-left"></i> Back
             </a>
             <h1>{{entry.title}}</h1>
-            <img src="{{siteUrl}}{{entry.mainNewsImage.one().url}}">
+
+            {% if entry.mainNewsImage.exists() %}
+                <img src="{{siteUrl}}{{entry.mainNewsImage.one().url}}">
+            {% else %}
+                <img src="{{siteUrl}}/images/news_banner_default.jpg" alt="">
+            {% endif %}
+
             <p>{{entry.newsBody | nl2br}}</p>
         </section>
         <section class="recent">
@@ -14,7 +20,12 @@
             {% for entry in craft.entries.section('news').limit(4) %}
                 <div class="recentNewsItem">
                     <div class="recentNewsImage">
-                        {% set image = entry.featuredNewsImage.one().url %}
+                        {% if entry.featuredNewsImage.exists() %}
+                            {% set image = entry.featuredNewsImage.one().url %}
+                        {% else %}
+                            {% set image = '../web/images/featured_default.jpg' %}
+                        {% endif %}
+
                         <a href="{{entry.url}}"><img src="{{siteUrl}}{{image}}" alt=""></a>
                     </div>
                     <div class="recentNewsText">
