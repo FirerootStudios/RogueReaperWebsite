@@ -1,5 +1,6 @@
 {
   "require": {
+    "adigital/cookie-consent-banner": "1.1.6",
     "craftcms/cms": "^3.0.0",
     "dolphiq/iconpicker": "^1.0",
     "vlucas/phpdotenv": "^3.4.0"
