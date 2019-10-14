@@ -17,19 +17,24 @@
         </section>
         <section class="recent">
             <h1>Recent News</h1>
-            {% for entry in craft.entries.section('news').limit(4) %}
+
+            {% set entry = craft.entries()
+                .section('news')
+                .limit(4) %}
+
+            {% for newsItem in entry.all() %}
                 <div class="recentNewsItem">
                     <div class="recentNewsImage">
-                        {% if entry.featuredNewsImage.exists() %}
-                            {% set image = entry.featuredNewsImage.one().url %}
+                        {% if newsItem.featuredNewsImage.exists() %}
+                            {% set image = newsItem.featuredNewsImage.one().url %}
                         {% else %}
                             {% set image = '../web/images/featured_default.jpg' %}
                         {% endif %}
 
-                        <a href="{{entry.url}}"><img src="{{siteUrl}}{{image}}" alt=""></a>
+                        <a href="{{newsItem.url}}"><img src="{{siteUrl}}{{image}}" alt=""></a>
                     </div>
                     <div class="recentNewsText">
-                        <a href="{{entry.url}}"><h3 class="recentNewsItemHeader">{{ entry.title }}</h3></a>
+                        <a href="{{newsItem.url}}"><h3 class="recentNewsItemHeader">{{ newsItem.title }}</h3></a>
                     </div>
                 </div>
             {% endfor %}

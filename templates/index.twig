@@ -67,21 +67,25 @@
             </div>
 
             <div class="row">
-                {% for entry in craft.entries.section('news').limit(4) %}
+                {% set entry = craft.entries()
+                    .section('news')
+                    .limit(4) %}
+
+                {% for newsItem in entry.all() %}
                     <div class="newsItem">
                         <div class="newsImage">
-                            {% if entry.featuredNewsImage.exists() %}
-                                {% set image = entry.featuredNewsImage.one().url %}
+                            {% if newsItem.featuredNewsImage.exists() %}
+                                {% set image = newsItem.featuredNewsImage.one().url %}
                             {% else %}
                                 {% set image = '../web/images/featured_default.jpg' %}
                             {% endif %}
 
-                            <a href="{{entry.url}}"><img src="{{image}}" alt=""></a>
+                            <a href="{{newsItem.url}}"><img src="{{image}}" alt=""></a>
                         </div>
                         <div class="newsText">
-                            <a href="{{entry.url}}"><h3 class="newsItemHeader">{{ entry.title }}</h3></a>
+                            <a href="{{newsItem.url}}"><h3 class="newsItemHeader">{{ newsItem.title }}</h3></a>
                             <span class="newsContent">
-                                {{entry.newsSubtext}}
+                                {{newsItem.newsSubtext}}
                             </span>
                         </div>
                     </div>

@@ -32,7 +32,7 @@
             </nav> #}
 
             {% set startYear = 2019 %}
-            {% set currentYear = now.year %}
+            {% set currentYear = 'now'|date('Y') %}
 
             {% if startYear == currentYear %}
                 {% set copyrightYears = startYear %}
