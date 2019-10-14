@@ -178,6 +178,10 @@ header main #download:hover {
     height: 420px;
 }
 
+.banner #text {
+    position: absolute;
+}
+
 .banner h1 {
     font-size: 5rem;
     font-weight: 100;
@@ -340,7 +344,7 @@ footer .copyright {
     }
 
     #overlay {
-        height: 30%;
+        height: 40%;
     }
 
     #about h1 {
@@ -373,10 +377,6 @@ footer .copyright {
         height: 100%;
     }
 
-    .banner #text {
-        position: absolute;
-    }
-
     .banner h1 {
         font-size: 3.75rem;
     }
@@ -398,7 +398,7 @@ footer .copyright {
     }
 
     #news {
-        padding-top: 600px;
+        padding-top: 400px;
     }
 
     .newsItem {
@@ -546,7 +546,7 @@ footer .copyright {
     }
 
     #news {
-        padding-top: 600px;
+        padding-top: 300px;
     }
 
     .newsItem {
@@ -590,10 +590,6 @@ footer .copyright {
 
     #overlay {
         height: 40%;
-    }
-
-    #about {
-        padding-top: 20px;
     }
 
     #about main #text p {
