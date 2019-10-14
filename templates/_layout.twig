@@ -22,12 +22,14 @@
                     <a href="{{entry.socialLink}}" target="_blank">{{ entry.socialIcon.iconSpan|raw }}</a>
                 {% endfor %}
             </div>
-            <img id="logo" src="{{siteUrl}}/images/FireRoot-logo-final-text.png" alt="Fireroot Logo">
-            <nav id="footer_nav">
+            <a href="https://www.firerootstudios.com/" target="_blank">
+                <img id="logo" src="{{siteUrl}}/images/FireRoot-logo-final-text.png" alt="Fireroot Logo">
+            </a>
+            {# <nav id="footer_nav">
                 <a href="https://www.firerootstudios.com/" target="_blank">ABOUT</a> | 
                 <a href="https://www.firerootstudios.com/" target="_blank">CONTACT US</a> | 
                 <a href="https://www.firerootstudios.com/" target="_blank">PRESS</a> 
-            </nav>
+            </nav> #}
 
             {% set startYear = 2019 %}
             {% set currentYear = now.year %}

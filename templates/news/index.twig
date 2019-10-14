@@ -1,1 +1,30 @@
-<h1>News</h1>
+{% extends '_layout' %}
+{% block main %}
+        <section id="news">
+            <div class="row">
+                <h1 class="newsHeader">Latest News</h1>
+            </div>
+
+            <div class="row">
+                {% for entry in craft.entries.section('news') %}
+                    <div class="newsItem">
+                        <div class="newsImage">
+                            {% if entry.featuredNewsImage.exists() %}
+                                {% set image = entry.featuredNewsImage.one().url %}
+                            {% else %}
+                                {% set image = '../web/images/featured_default.jpg' %}
+                            {% endif %}
+
+                            <a href="{{entry.url}}"><img src="{{image}}" alt=""></a>
+                        </div>
+                        <div class="newsText">
+                            <a href="{{entry.url}}"><h3 class="newsItemHeader">{{ entry.title }}</h3></a>
+                            <span class="newsContent">
+                                {{entry.newsSubtext}}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+{% endblock %}
