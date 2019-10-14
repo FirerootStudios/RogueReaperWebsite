@@ -6,7 +6,13 @@
         <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/fonts.css">
         <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/fontawesome/all.min.css">
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
-        <link rel="icon" href="{{siteUrl}}/images/icon.ico">
+
+        {# FAVICON #}
+        {% set entry = favicon.favicon.all() %}
+        {% for image in entry %}
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ image.url }}">
+        {% endfor %}
+
         <title>Rogue Reaper</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
