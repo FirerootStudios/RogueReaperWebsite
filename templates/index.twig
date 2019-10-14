@@ -6,12 +6,10 @@
                     <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
                 </div>
                 <div id="text">
-                    <h1>ROGUE REAPER</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                        sed diam voluptua. At vero
-                    </p>
+                    {% for entry in craft.entries.section('Header').all() %}
+                        <h1>ROGUE REAPER</h1>
+                        <p>{{entry.headerText}}</p>
+                    {% endfor %}
                     {# <button id="download">
                         <a href="#">WISHLIST NOW</a>
                     </button> #}
@@ -38,8 +36,9 @@
                 </div>
             </main>
             {% endfor %} 
-            <div id="overlay_bottom"></div>
         </section>
+
+        <div id="overlay_bottom"></div>
 
         <section id="banners">
             {% for entry in craft.entries.section('banners').all() %}
