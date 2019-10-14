@@ -49,7 +49,8 @@
                     {% set image = '../web/images/banner_default.jpg' %}
                 {% endif %}
 
-                <div class="banner" style="background: url('{{image}}') 0 0 no-repeat / cover">
+                <div class="banner">
+                    <img src="{{image}}">
                     <div id="text">
                         <h1>{{entry.title}}</h1>
                         <p>{{entry.bannerText}}</p>
