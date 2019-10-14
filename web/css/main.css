@@ -75,7 +75,7 @@ header main #download {
     font-size: 62px;
     font-family: 'Cemong';
     float: right;
-    display: none;
+    /* display: none; */
 }
 
 header main #download a {

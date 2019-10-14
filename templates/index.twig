@@ -1,21 +1,24 @@
 {% extends '_layout' %}
 {% block main %}
-        <header>
-            <main>
-                <div id="image">
-                    <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
-                </div>
-                <div id="text">
-                    {% for entry in craft.entries.section('Header').all() %}
-                        <h1>ROGUE REAPER</h1>
-                        <p>{{entry.headerText}}</p>
-                    {% endfor %}
-                    {# <button id="download">
-                        <a href="#">WISHLIST NOW</a>
-                    </button> #}
-                </div>
-            </main>
-        </header>
+        {% for entry in craft.entries.section('Header').all() %}
+            <header>
+                <main style="background: url('{{entry.headerBackground.one().url}}');">
+                    <div id="image">
+                        <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
+                    </div>
+                    <div id="text">
+                            <h1>ROGUE REAPER</h1>
+                            <p>{{entry.headerText}}</p>
+
+                            {% if entry.headerShowDownloadButton %}
+                                <button id="download">
+                                    <a href="#">WISHLIST NOW</a>
+                                </button>
+                            {% endif %}
+                    </div>
+                </main>
+            </header>
+        {% endfor %}
         
         <div id="overlay"></div>
 
