@@ -4,7 +4,7 @@
             <header>
                 <main style="background: url('{{entry.headerBackground.one().url}}');">
                     <div id="image">
-                        <img src="../web/images/lily_vector.svg" alt="Lilly Vector">
+                        <img src="../web/images/lily_vector_3.svg" alt="Lilly Vector">
                     </div>
                     <div id="text">
                             <h1>ROGUE REAPER</h1>
@@ -19,8 +19,14 @@
                 </main>
             </header>
         {% endfor %}
-        
-        <div id="overlay"></div>
+
+        {% set entry = smokeOverlayTop.smokeImage.all() %}
+        {% for image in entry %}
+            <div id="overlays">
+                <div id="first" style="background: url({{ image.url }}) 0 0 repeat-x;"></div>
+                <div id="second" style="background: url({{ image.url }}) 0 0 repeat-x;"></div>
+            </div>
+        {% endfor %}
 
         <section id="about">
             {% for entry in craft.entries.section('About').all() %}
@@ -41,7 +47,13 @@
             {% endfor %} 
         </section>
 
-        <div id="overlay_bottom"></div>
+        {# {% set entry = smokeOverlayBottom.smokeImage.all() %}
+        {% for image in entry %}
+            <div id="overlays_bottom">
+                <div id="first" style="background: url({{ image.url }}) 0 0 repeat-x;"></div>
+                <div id="second" style="background: url({{ image.url }}) 0 0 repeat-x;"></div>
+            </div>
+        {% endfor %} #}
 
         <section id="banners">
             {% for entry in craft.entries.section('banners').all() %}

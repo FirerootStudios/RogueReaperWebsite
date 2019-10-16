@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    background: url(../images/seamlessbg.jpg);
+}
+
 /* ----- HEADER ----- */
 header {
     height: 100vh;
@@ -20,9 +24,17 @@ p {
 }
 
 header main {
-    background: url(../images/seamlessbg.jpg);
     position: relative;
     align-items: center;
+}
+
+header main #image {
+    margin-top: auto;
+}
+
+header main #image img {
+    width: 650px;
+    max-width: 100%;
 }
 
 main #text {
@@ -57,10 +69,6 @@ main #text p {
     margin: 60px 0px 45px 0px;
 }
 
-main img {
-    width: 760px;
-}
-
 header main button {
     height: 150px;
     width: 150px;
@@ -75,7 +83,6 @@ header main #download {
     font-size: 62px;
     font-family: 'Cemong';
     float: right;
-    /* display: none; */
 }
 
 header main #download a {
@@ -88,17 +95,57 @@ header main #download:hover {
     cursor: pointer;
 }
 
-#overlay {
-    width: 100%;
-    background: url(../images/shadow_above.png) 0 0 no-repeat / cover;
+/* ----- OVERLAYS ----- */
+
+#first, #second {
     position: absolute;
     bottom: 0;
+    width: 100%;
     height: 640px;
+}
+
+#first {
+    -webkit-animation: slideLeft 50s linear infinite;
+    -moz-animation: slideLeft 50s linear infinite;
+    -o-animation: slideLeft 50s linear infinite;
+    -ms-animation: slideLeft 50s linear infinite;
+    animation: slideLeft 50s linear infinite;
+}
+
+#second {
+    -webkit-animation: slideRight 90s linear infinite;
+    -moz-animation: slideRight 90s linear infinite;
+    -o-animation: slideRight 90s linear infinite;
+    -ms-animation: slideRight 90s linear infinite;
+    animation: slideRight 90s linear infinite;
+}
+
+@keyframes slideLeft {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+  
+@keyframes slideRight {
+    from{
+        background-position: 100% 0;
+    }
+    to{
+        background-position: 0 0;
+    }
+}
+
+#overlays_bottom {
+    width: 100%;
+    position: absolute;
 }
 
 /* ----- ABOUT ----- */
 #about {
-    height: 80vh;
+    height: 100vh;
 }
 
 #about h1 {
@@ -107,18 +154,18 @@ header main #download:hover {
     margin: 0;
     font-weight: 100;
     font-family: 'Cemong';
-    background-color: black;
     text-align: center;
+    padding-top: 100px;
 }
 
 #about main {
-    background-color: black;
     align-items: center;
-    justify-content: space-evenly;
+    height: 65%;
 }
 
 #about main img {
-    width: 100%;
+    width: 500px;
+    max-width: 100%;
 }
 
 #about main h1 {
@@ -141,21 +188,12 @@ header main #download:hover {
     margin-top: 0;
 }
 
-#overlay_bottom {
-    width: 100%;
-    background: url(../images/shadow_below2.png) 0 0 no-repeat / cover;
-    position: absolute;
-    height: 80%;
-}
-
 /* ----- BANNERS ----- */
 #banners {
-    margin-top: 800px;
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url(../images/greybg.jpg);
 }
 
 .banner:nth-of-type(odd) #text {
@@ -337,7 +375,7 @@ footer .copyright {
     }
 
     main #text {
-        margin-top: 0px;
+        margin-top: 250px;
     }
 
     main #text h1 {
@@ -346,14 +384,6 @@ footer .copyright {
 
     header main #text p {
         display: none;
-    }
-
-    #overlay {
-        height: 40%;
-    }
-
-    #about h1 {
-        padding-top: 50px;
     }
 
     #about main #text h1 {
@@ -369,12 +399,6 @@ footer .copyright {
 
     #overlay_bottom {
         margin-top: 685px;
-    }
-
-    #banners {
-        margin-top: 0px;
-        padding-top: 200px;
-        background: black;
     }
 
     .banner h1 {
@@ -398,7 +422,7 @@ footer .copyright {
     }
 
     #news {
-        padding-top: 400px;
+        padding: 100px 0px;
     }
 
     .newsItem {
@@ -435,8 +459,20 @@ footer .copyright {
         font-size: 6rem;
     }
 
-    main img {
+    main #text {
+        margin-top: 80px;
+    }
+
+    #about main img {
         width: 500px;
+    }
+
+    #about main #text p {
+        font-size: 1.5rem;
+    }
+
+    #banners {
+        height: 100vh;
     }
 
     header main #text h1:after {
@@ -458,6 +494,10 @@ footer .copyright {
         flex-direction: column-reverse;
     }
 
+    header {
+        height: 100vh;
+    }
+
     header main #text h1:after {
         font-size: 1.5rem;
     }
@@ -472,20 +512,8 @@ footer .copyright {
         margin-bottom: 50px;
     }
 
-
-    /* -- Removes gap on some phones */
-    @supports (-webkit-appearance:none) {
-        header {
-            height: calc(100vh - 120px);
-        }
-    }
-
     main img {
         width: 400px;
-    }
-
-    main #text {
-        margin-top: 0px;
     }
 
     main #text h1 {
@@ -496,13 +524,17 @@ footer .copyright {
         display: none;
     }
 
-    #overlay {
-        height: 30%;
+    #first, #second {
+        height: 470px;
     }
 
     #about h1 {
         padding-top: 100px;
         font-size: 4rem;
+    }
+
+    #about main img {
+        max-width: 100%;
     }
 
     #about main #text h1 {
@@ -515,14 +547,8 @@ footer .copyright {
         padding: 0px 25px;
     }
 
-    #overlay_bottom {
-        /* margin-top: 500px; */
-    }
-
-    #banners {
-        margin-top: 0px;
-        padding-top: 200px;
-        background: black;
+    .banner {
+        height: 320px;
     }
 
     .banner h1 {
@@ -546,7 +572,7 @@ footer .copyright {
     }
 
     #news {
-        padding-top: 300px;
+        padding-top: 100px;
     }
 
     .newsItem {
@@ -583,17 +609,23 @@ footer .copyright {
     }
 }
 
-@media only screen and (max-width: 320px) {
-    main img {
-        width: 300px;
+@media only screen and (max-width: 375px) {
+    #about main {
+        align-items: center;
+        height: 75%;
     }
 
-    #overlay {
-        height: 40%;
+    #about h1 {
+        padding-top: 50px;
+        font-size: 3.5rem;
     }
 
     #about main #text p {
         padding: 0px 25px;
+    }
+
+    .banner {
+        height: 260px;
     }
 
     .banner h1 {
@@ -619,12 +651,12 @@ and (min-device-width : 1024px)
 and (max-device-width : 1366px) 
 and (orientation : landscape) { 
 
-    main img {
-        width: 600px;
+    header main #image img {
+        width: 450px;
     }
 
     main #text {
-        margin-top: 0;
+        margin-top: 50px;
     }
 
     main #text p {
@@ -641,6 +673,10 @@ and (orientation : landscape) {
         font-size: 1.5rem;
     }
 
+    #banners {
+        height: 100vh;
+    }
+
     .banner h1 {
         font-size: 3.5rem;
     }
@@ -649,8 +685,12 @@ and (orientation : landscape) {
         font-size: 1.5rem;
     }
 
-    #overlay {
-        height: 500px;
+    .banner {
+        height: 320px;
+    }
+
+    #news {
+        padding: 100px 0px;
     }
 }
 
@@ -663,33 +703,38 @@ and (orientation : landscape) {
         flex-direction: row;
     }
 
-    main img {
+    header main #image img {
         width: 300px;
+    }
+
+    #about main {
+        flex-direction: column-reverse;
+        height: 100vh;
+    }
+
+    #about h1 {
+        padding: 40px 0px;
     }
 
     #about main img {
         width: 100%;
-        height: 100%;
     }
 
     #about main #image {
         width: 50%;
-        height: 200px;
     }
 
     #about main #text h1 {
         font-size: 2.5rem;
+        padding: 40px 0 0 0;
+    }
+
+    #about main #text p {
+        font-size: 1rem;
     }
 
     main #text h1 {
         font-size: 4rem;
-    }
-
-    /* -- Removes gap on some phones */
-    @supports (-webkit-appearance:none) {
-        header {
-            height: calc(100vh - 40px);
-        }
     }
 
     header main #text h1:after {
@@ -700,22 +745,23 @@ and (orientation : landscape) {
         margin-top: 0;
     }
 
-    main #text p {
-        display: none;
-    }
-
     header main #download {
         height: 60px;
         width: 200px;
         font-size: 1.6rem;
     }
 
-    #overlay {
-        height: 200px;
+    #first, #second {
+        height: 500px;
     }
 
     #banners {
         padding-top: 250px;
+        height: 100vh;
+    }
+
+    .banner {
+        height: 150px;
     }
 
     .banner h1 {
