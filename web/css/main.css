@@ -101,23 +101,23 @@ header main #download:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 640px;
+    height: 540px;
 }
 
 #first {
-    -webkit-animation: slideLeft 50s linear infinite;
-    -moz-animation: slideLeft 50s linear infinite;
-    -o-animation: slideLeft 50s linear infinite;
-    -ms-animation: slideLeft 50s linear infinite;
-    animation: slideLeft 50s linear infinite;
+    -webkit-animation: slideLeft 20s linear infinite;
+    -moz-animation: slideLeft 20s linear infinite;
+    -o-animation: slideLeft 20s linear infinite;
+    -ms-animation: slideLeft 20s linear infinite;
+    animation: slideLeft 20s linear infinite;
 }
 
 #second {
-    -webkit-animation: slideRight 90s linear infinite;
-    -moz-animation: slideRight 90s linear infinite;
-    -o-animation: slideRight 90s linear infinite;
-    -ms-animation: slideRight 90s linear infinite;
-    animation: slideRight 90s linear infinite;
+    -webkit-animation: slideRight 8s linear infinite;
+    -moz-animation: slideRight 8s linear infinite;
+    -o-animation: slideRight 8s linear infinite;
+    -ms-animation: slideRight 8s linear infinite;
+    animation: slideRight 8s linear infinite;
 }
 
 @keyframes slideLeft {
@@ -452,6 +452,22 @@ footer .copyright {
         text-align: center;
         font-size: 1.25rem;
     }
+
+    #first {
+        -webkit-animation: slideLeft 50s linear infinite;
+        -moz-animation: slideLeft 50s linear infinite;
+        -o-animation: slideLeft 50s linear infinite;
+        -ms-animation: slideLeft 50s linear infinite;
+        animation: slideLeft 50s linear infinite;
+    }
+    
+    #second {
+        -webkit-animation: slideRight 70s linear infinite;
+        -moz-animation: slideRight 70s linear infinite;
+        -o-animation: slideRight 70s linear infinite;
+        -ms-animation: slideRight 70s linear infinite;
+        animation: slideRight 70s linear infinite;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -494,8 +510,10 @@ footer .copyright {
         flex-direction: column-reverse;
     }
 
-    header {
-        height: 100vh;
+    @supports (-webkit-appearance:none) {
+        header {
+            height: calc(100vh - 120px);
+        }
     }
 
     header main #text h1:after {
@@ -703,6 +721,12 @@ and (orientation : landscape) {
         flex-direction: row;
     }
 
+    @supports (-webkit-appearance:none) {
+        header {
+            height: calc(100vh - 50px);
+        }
+    }
+
     header main #image img {
         width: 300px;
     }
@@ -752,7 +776,7 @@ and (orientation : landscape) {
     }
 
     #first, #second {
-        height: 500px;
+        height: 320px;
     }
 
     #banners {

@@ -8,8 +8,8 @@
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' rel='stylesheet' type='text/css'>
 
         {# FAVICON #}
-        {% set entry = favicon.favicon.all() %}
-        {% for image in entry %}
+        {% set favicon = favicon.favicon.all() %}
+        {% for image in favicon %}
             <link rel="icon" type="image/png" sizes="16x16" href="{{ image.url }}">
         {% endfor %}
 
@@ -24,8 +24,8 @@
         <footer>
             <h1>Follow Rogue Reaper: Awakening</h1>
             <div class="row" id="socials">
-                {% for entry in craft.entries.section('socials').all() %}
-                    <a href="{{entry.socialLink}}" target="_blank">{{ entry.socialIcon.iconSpan|raw }}</a>
+                {% for social in craft.entries.section('socials').all() %}
+                    <a href="{{social.socialLink}}" target="_blank">{{ social.socialIcon.iconSpan|raw }}</a>
                 {% endfor %}
             </div>
             <a href="https://www.firerootstudios.com/" target="_blank">

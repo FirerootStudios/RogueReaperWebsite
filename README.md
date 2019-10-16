@@ -13,3 +13,6 @@ Create a database and import `filename.sql`.
 Run `./craft setup`, this will generate a security and an .env file. Just follow the steps.
 
 Now you can access the website on `../RogueReaperWebsite/web`
+
+### Iconpicker
+Copy all files in the `css/webfonts` folder and paste them in `/vendor/dolphiq/src/resources-shared/fonts`.
