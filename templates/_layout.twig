@@ -57,5 +57,19 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-149858779-1');
+
+
+        window.addEventListener('load', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        })
+
+        // Fix for mobile header size
+        window.addEventListener('orientationchange', () => {
+            let vh = window.innerHeight * 0.01;
+            if(window.innerHeight != vh) {
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+        });
     </script>
 </html>

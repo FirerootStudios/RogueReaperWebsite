@@ -1,3 +1,7 @@
+:root {
+    --vh: 1vh;
+}
+
 * {
     margin: 0 auto;
     padding: 0;
@@ -9,7 +13,8 @@ html {
 
 /* ----- HEADER ----- */
 header {
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 main {
@@ -146,6 +151,7 @@ header main #download:hover {
 /* ----- ABOUT ----- */
 #about {
     height: 100vh;
+    border-top: 3px solid white;
 }
 
 #about h1 {
@@ -190,7 +196,7 @@ header main #download:hover {
 
 /* ----- BANNERS ----- */
 #banners {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,13 +356,8 @@ footer .copyright {
 }
 
 /* ----- RESPONSIVE PORTRAIT ----- */
-/* Tablets */
-@media only screen and (max-width: 1600px) {
-    main {
-        flex-direction: column-reverse;
-    }
-}
 
+/* Tablets */
 @media only screen and (max-width: 1024px) {
     html, body {
         overflow-x: hidden;
@@ -441,7 +442,7 @@ footer .copyright {
     }
 
     footer h1 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     #socials {
@@ -487,10 +488,6 @@ footer .copyright {
         font-size: 1.5rem;
     }
 
-    #banners {
-        height: 100vh;
-    }
-
     header main #text h1:after {
         font-size: 2.5rem;
     }
@@ -510,12 +507,6 @@ footer .copyright {
         flex-direction: column-reverse;
     }
 
-    @supports (-webkit-appearance:none) {
-        header {
-            height: calc(100vh - 120px);
-        }
-    }
-
     header main #text h1:after {
         font-size: 1.5rem;
     }
@@ -530,7 +521,7 @@ footer .copyright {
         margin-bottom: 50px;
     }
 
-    main img {
+    header main #image img{
         width: 400px;
     }
 
@@ -552,7 +543,7 @@ footer .copyright {
     }
 
     #about main img {
-        max-width: 100%;
+        max-width: 90%;
     }
 
     #about main #text h1 {
@@ -691,10 +682,6 @@ and (orientation : landscape) {
         font-size: 1.5rem;
     }
 
-    #banners {
-        height: 100vh;
-    }
-
     .banner h1 {
         font-size: 3.5rem;
     }
@@ -713,7 +700,7 @@ and (orientation : landscape) {
 }
 
 @media only screen 
-and (min-device-width : 375px) 
+and (min-device-width : 320px) 
 and (max-device-width : 864px) 
 and (orientation : landscape) { 
 
@@ -721,14 +708,15 @@ and (orientation : landscape) {
         flex-direction: row;
     }
 
-    @supports (-webkit-appearance:none) {
+    /* @supports (-webkit-appearance:none) {
         header {
-            height: calc(100vh - 50px);
+            height: 100vh; 
+            height: calc(var(--vh, 1vh) * 100);
         }
-    }
+    } */
 
     header main #image img {
-        width: 300px;
+        width: 250px;
     }
 
     #about main {
@@ -781,7 +769,6 @@ and (orientation : landscape) {
 
     #banners {
         padding-top: 250px;
-        height: 100vh;
     }
 
     .banner {
