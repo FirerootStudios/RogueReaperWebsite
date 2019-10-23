@@ -14,5 +14,11 @@ Run `./craft setup`, this will generate a security and an .env file. Just follow
 
 Now you can access the website on `../RogueReaperWebsite/web`
 
-### Iconpicker
+
+### Plugins
+
+#### SCSS
+When styling, please work in `/web/scss/_main.scss`, when done, please copy it into `/templates/main.scss`.  
+
+#### Iconpicker
 Copy all files in the `css/webfonts` folder and paste them in `/vendor/dolphiq/src/resources-shared/fonts`.
