@@ -15,7 +15,8 @@
 
         {# Import SCSS #}
         {% scss compressed %}
-            {{ block("scss", "scss.twig") }}
+            {{ block("scss", "_main_scss.twig") }}
+            {{ block("responsive_scss", "_responsive_scss.twig") }}
         {% endscss %}
 
         <title>Rogue Reaper</title>

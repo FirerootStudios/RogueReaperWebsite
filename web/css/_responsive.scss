@@ -1,0 +1,538 @@
+// Work in here, when done, copy it in /templates/_responsive_scss.twig// Work in here, when done, copy it in /templates/_responsive_scss.twig
+
+{% block responsive_scss %}
+/* ----- RESPONSIVE PORTRAIT ----- */
+
+/* Tablets */
+@media only screen and (max-width: 1024px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    header {
+        main {
+            #download {
+                display: block;
+                font-size: 3.6rem;
+                float: none;
+                margin-top: 60px;
+                margin-bottom: 50px;
+            }
+
+            #text {
+                p {
+                    display: none;
+                }
+
+                h1 {
+                    &:after {
+                        font-size: 3.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        #text {
+            margin-top: 250px;
+
+            h1 {
+                font-size: 8rem;
+            }
+        }
+    }
+
+    #about {
+        main {
+            #text {
+                h1 {
+                    max-width: none;
+                    font-size: 3.5rem;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    text-align: center;
+                    padding: 0px 70px;
+                }
+            }
+        }
+    }
+
+    #overlay_bottom {
+        margin-top: 685px;
+    }
+
+    #banners {
+        .banner {
+            #text {
+                h1 {
+                    font-size: 3.75rem;
+                }
+        
+                p {
+                    font-size: 2rem;
+                }
+            }
+    
+            &:nth-of-type(odd) #text {
+                padding: 20px;
+                margin-right: 0px;
+                text-align: center;
+            }
+    
+            &:nth-of-type(even) #text {
+                padding: 20px;
+                margin-left: 0px;
+                text-align: center;
+            }
+        }
+    }
+
+    #news {
+        padding: 100px 0px;
+
+        .row {
+            .newsItem {
+                margin-bottom: 30px;
+
+                .newsText {
+                    max-width: 350px;
+                    text-align: center;
+                    padding: 0px 20px;
+                }
+            }
+        
+            .newsHeader {
+                font-size: 4rem;
+                margin: 0 0 30px 0;
+            }
+        }
+    }
+
+    footer {
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        #socials {
+            width: 90%;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 1.25rem;
+        }
+    }
+
+    #first {
+        -webkit-animation: slideLeft 50s linear infinite;
+        -moz-animation: slideLeft 50s linear infinite;
+        -o-animation: slideLeft 50s linear infinite;
+        -ms-animation: slideLeft 50s linear infinite;
+        animation: slideLeft 50s linear infinite;
+    }
+    
+    #second {
+        -webkit-animation: slideRight 70s linear infinite;
+        -moz-animation: slideRight 70s linear infinite;
+        -o-animation: slideRight 70s linear infinite;
+        -ms-animation: slideRight 70s linear infinite;
+        animation: slideRight 70s linear infinite;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        #text {
+            margin-top: 80px;
+
+            h1 {
+                font-size: 6rem;
+            }
+        }
+    }
+
+    #about {
+        main {
+            img {
+                width: 500px;
+            }
+
+            #text {
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    header {
+        main {
+            #download {
+                font-size: 2.6rem;
+            }
+
+            #text {
+                h1 {
+                    &:after {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Smartphones */
+@media only screen and (max-width: 432px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    header {
+        main {
+            #text {
+                h1 {
+                    &:after {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                p {
+                    display: none;
+                }
+            }
+
+            #download {
+                display: block;
+                width: 180px;
+                height: 40px;
+                font-size: 1.6rem;
+                float: none;
+                margin-top: 60px;
+                margin-bottom: 50px;
+            }
+
+            #image {
+                img {
+                    width: 400px; 
+                }
+            }
+        }
+    }
+
+    #first, #second {
+        height: 470px;
+    }
+
+    #about {
+        h1 {
+            padding-top: 100px;
+            font-size: 4rem;
+        }
+
+        main {
+            img {
+                max-width: 90%;
+            }
+        }
+
+        #text {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: center;
+                padding: 0px 25px;
+            }
+        }
+    }
+
+    #banners {
+        .banner {
+            height: 320px;
+    
+            h1 {
+                font-size: 2rem;
+            }
+    
+            p {
+                font-size: 1rem;
+            }    
+    
+            &:nth-of-type(odd) #text {
+                padding: 20px;
+                margin-right: 0px;
+                text-align: center;
+            }
+    
+            &:nth-of-type(even) #text {
+                padding: 20px;
+                margin-left: 0px;
+                text-align: center;
+            }
+        }
+    }
+
+    #news {
+        padding-top: 100px;
+
+        .row {
+            .newsHeader {
+                font-size: 4rem;
+                margin: 0 0 30px 0;
+            }
+
+            .newsItem {
+                margin-bottom: 30px;
+
+                .newsImage {
+                    width: 300px;
+                    height: auto;
+                }
+
+                .newsText {
+                    max-width: 350px;
+                    text-align: center;
+                    padding: 0px 20px;
+                }
+            }
+        }
+    }
+
+    footer {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        #socials {
+            width: 90%;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    } 
+}
+
+@media only screen and (max-width: 375px) {
+    #about {
+        main {
+            align-items: center;
+            height: 75%;
+        }
+
+        h1 {
+            padding-top: 50px;
+            font-size: 3.5rem;
+        }
+
+        #text {
+            p {
+                padding: 0px 25px;
+            }
+        }
+    }
+
+    #banners {
+        .banner {
+            height: 260px;
+    
+            #text {
+                h1 {
+                    font-size: 1.5rem;
+                }
+        
+                p {
+                    font-size: 1.0rem;
+                }
+            }
+        }
+    }
+
+    .newsItemHeader {
+        font-size: 1.5rem;
+    }
+
+    .newsContent {
+        font-size: 0.6rem;
+    }
+}
+
+/* ----- RESPONSIVE LANDSCAPE ----- */
+@media only screen 
+and (min-device-width : 1024px) 
+and (max-device-width : 1366px) 
+and (orientation : landscape) { 
+
+    header {
+        main {
+            #image {
+                img {
+                    width: 450px;
+                }
+            }
+
+            #text {
+                margin-top: 50px;
+
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #about {
+        main {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            #text {
+                p {
+                    display: block;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    #banners {
+        height: 320px;
+        .banner {
+            #text {
+                h1 {
+                    font-size: 3.5rem;
+                }
+    
+                
+                p {
+                    font-size: 1.5rem;
+                }  
+            }
+        }
+    }
+
+    #news {
+        padding: 100px 0px;
+    }
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 864px) 
+and (orientation : landscape) { 
+
+    main {
+        flex-direction: row;
+        #text {
+            margin-top: 0;
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    header {
+        main {
+            #text {
+                h1 {
+                    &:after {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+
+            #image {
+                img {
+                    width: 250px;
+                }
+            }
+
+            #download {
+                height: 60px;
+                width: 200px;
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    #about {
+        main {
+            flex-direction: column-reverse;
+            height: 100vh;
+
+            img {
+                width: 100%;
+            }
+
+            #image {
+                width: 50%;
+            }
+        }
+
+        h1 {
+            padding: 40px 0px;
+        }
+
+        #text {
+            h1 {
+                font-size: 2.5rem;
+                padding: 40px 0 0 0;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    #first, #second {
+        height: 320px;
+    }
+
+    #banners {
+        padding-top: 250px;
+
+        .banner {
+            height: 150px;
+
+            #text {
+                h1 {
+                    font-size: 1.75rem;
+                }
+    
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    #overlay_bottom {
+        margin-top: 425px;
+    }
+
+    .newsImage {
+        height: 180px;
+        width: 300px;
+    }
+
+    footer {
+        .copyright {
+            font-size: 0.8rem;
+        }
+    } 
+}
+{% endblock %}
