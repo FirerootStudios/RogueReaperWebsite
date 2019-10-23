@@ -1,7 +1,7 @@
 {% do view.registerAssetBundle("plugins\\dolphiq\\iconpicker\\assets\\sharedAsset") %}
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/main.css">
+        {# <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/main.css"> #}
         <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/news.css">
         <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/fonts.css">
         <link rel="stylesheet" type="text/css" href="{{siteUrl}}css/fontawesome/all.min.css">
@@ -13,12 +13,16 @@
             <link rel="icon" type="image/png" sizes="16x16" href="{{ image.url }}">
         {% endfor %}
 
+        {# Import SCSS #}
+        {% scss compressed %}
+            {{ block("scss", "scss.twig") }}
+        {% endscss %}
+
         <title>Rogue Reaper</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         {% block main %}
-
         {% endblock %}
         
         <footer>

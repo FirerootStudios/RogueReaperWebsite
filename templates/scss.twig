@@ -1,0 +1,800 @@
+{% block scss %}
+    :root {
+        --vh: 1vh;
+    }
+
+    * {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    html {
+        background: url(../web/images/seamlessbg.jpg);
+    }
+
+    /* ----- HEADER ----- */
+    header {
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+
+        main {
+            position: relative;
+            align-items: center;
+
+            button {
+                height: 150px;
+                width: 150px;
+            }
+
+            #download {
+                height: 120px;
+                width: 400px;
+                border: 2px solid #707070;
+                border-radius: 30px;
+                background-color: rgba(67, 57, 57, 0.75);
+                font-size: 62px;
+                font-family: 'Cemong';
+                float: right;
+
+                &:hover {
+                    background-color: rgba(85, 74, 74, 0.75);
+                    cursor: pointer;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+
+            #image {
+                margin-top: auto;
+
+                img {
+                    width: 650px;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    main {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        #text {
+            color: white;
+            font-family: 'Cemong';
+            margin-top: -250px;
+            z-index: 2;
+
+            p {
+                max-width: 781px;
+                color: white;
+                font-size: 2rem;
+                text-align: left;
+                margin: 0;
+                margin: 60px 0px 45px 0px;
+            }
+
+            h1 {
+                /* color: #393434; */
+                color: white;
+                font-size: 10rem;
+                max-width: 761px;
+                margin: 0;
+                font-weight: 100;
+
+                :after {
+                    display: block;
+                    font-size: 3.5rem;
+                    content: "Awakening";
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    p {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 200;
+    }
+
+    /* ----- OVERLAYS ----- */
+
+    #first, #second {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 540px;
+    }
+
+    #first {
+        -webkit-animation: slideLeft 20s linear infinite;
+        -moz-animation: slideLeft 20s linear infinite;
+        -o-animation: slideLeft 20s linear infinite;
+        -ms-animation: slideLeft 20s linear infinite;
+        animation: slideLeft 20s linear infinite;
+    }
+
+    #second {
+        -webkit-animation: slideRight 8s linear infinite;
+        -moz-animation: slideRight 8s linear infinite;
+        -o-animation: slideRight 8s linear infinite;
+        -ms-animation: slideRight 8s linear infinite;
+        animation: slideRight 8s linear infinite;
+    }
+
+    @keyframes slideLeft {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 100% 0;
+        }
+    }
+    
+    @keyframes slideRight {
+        from{
+            background-position: 100% 0;
+        }
+        to{
+            background-position: 0 0;
+        }
+    }
+
+    #overlays_bottom {
+        width: 100%;
+        position: absolute;
+    }
+
+    /* ----- ABOUT ----- */
+    #about {
+        height: 100vh;
+        border-top: 3px solid white;
+
+        h1 {
+            color: white;
+            font-size: 5rem;
+            margin: 0;
+            font-weight: 100;
+            font-family: 'Cemong';
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        main {
+            align-items: center;
+            height: 65%;
+
+            img {
+                width: 500px;
+                max-width: 100%;
+            }
+
+            h1 {
+                color: white;
+                font-size: 5rem;
+                max-width: 875px;
+                margin: 0;
+                font-weight: 100;
+            }
+
+            p {
+                font-size: 1.75rem;
+                max-width: 875px;
+                margin: 20px 0;
+                font-weight: 200;
+                text-align: center;
+            }
+
+            #text {
+                margin-top: 0;
+            }
+        }
+    }
+
+    /* ----- BANNERS ----- */
+    #banners {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .banner {
+        font-family: 'Cemong';
+        color: white;
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 420px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:nth-of-type(even) #text {
+            padding-right: 595px;
+            margin-left: 80px;
+        }
+
+        &:nth-of-type(odd) #text {
+            padding-left: 595px;
+            margin-right: 80px;
+            text-align: right;
+        }
+
+        #text {
+            position: absolute;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 100;
+        }
+
+        p {
+            font-size: 1.75rem;
+            margin-top: 20px;
+        }
+    }
+
+    /* ----- NEWS ----- */
+    #news {
+        min-height: 630px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url('../web/images/greybg.jpg');
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
+        
+    .newsHeader {
+        flex: 1;
+        text-align: center;
+        font-family: 'Cemong';
+        font-weight: 100;
+        font-size: 5rem;
+        margin: 0 0 55px 0;
+    }
+        
+    .newsText {
+        width: 400px;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+        
+    .newsImage {
+        height: 240px;
+        width: 400px;
+        background: white;
+        border: 1px solid black;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .newsItemHeader {
+        font-family: 'Cemong';
+        font-weight: 100;
+        font-size: 1.8rem;
+        margin: 15px 0 0 0;
+    }
+
+    .newsContent {
+        font-size: 1rem;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    /* ----- FOOTER ----- */
+    footer {
+        background: black;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-family: 'Cemong';
+            color: #CACACA;
+            font-size: 3rem;
+            font-weight: 100;
+            margin-top: 25px;
+        }
+
+        #logo {
+            width: 172px;
+            margin-top: 25px;
+        }
+
+        #socials {
+            font-size: 3rem;
+            width: 25%;
+            justify-content: space-evenly;
+            margin-top: 25px;
+
+            span {
+                margin: 0;
+                color: white;
+            }
+        }
+
+        #footer_nav {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin-top: 25px;
+            font-size: 1.4rem;
+            color: white;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: white;
+            padding: 25px 0;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    }
+
+    /* ----- RESPONSIVE PORTRAIT ----- */
+
+    /* Tablets */
+    @media only screen and (max-width: 1024px) {
+        html, body {
+            overflow-x: hidden;
+        }
+
+        header main #text h1:after {
+            font-size: 3.5rem;
+        }
+
+        header main #download {
+            display: block;
+            font-size: 3.6rem;
+            float: none;
+            margin-top: 60px;
+            margin-bottom: 50px;
+        }
+
+        main #text {
+            margin-top: 250px;
+        }
+
+        main #text h1 {
+            font-size: 8rem;
+        }
+
+        header main #text p {
+            display: none;
+        }
+
+        #about main #text h1 {
+            max-width: none;
+            font-size: 3.5rem;
+        }
+
+        #about main #text p {
+            font-size: 1.8rem;
+            text-align: center;
+            padding: 0px 70px;
+        }
+
+        #overlay_bottom {
+            margin-top: 685px;
+        }
+
+        .banner h1 {
+            font-size: 3.75rem;
+        }
+
+        .banner p {
+            font-size: 2rem;
+        }
+
+        .banner:nth-of-type(odd) #text {
+            padding: 20px;
+            margin-right: 0px;
+            text-align: center;
+        }
+
+        .banner:nth-of-type(even) #text {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
+
+        #news {
+            padding: 100px 0px;
+        }
+
+        .newsItem {
+            margin-bottom: 30px;
+        }
+
+        .newsHeader {
+            font-size: 4rem;
+            margin: 0 0 30px 0;
+        }
+
+        .newsText {
+            max-width: 350px;
+            text-align: center;
+            padding: 0px 20px;
+        }
+
+        footer h1 {
+            font-size: 2.5rem;
+        }
+
+        #socials {
+            width: 90%;
+        }
+
+        footer .copyright {
+            text-align: center;
+            font-size: 1.25rem;
+        }
+
+        #first {
+            -webkit-animation: slideLeft 50s linear infinite;
+            -moz-animation: slideLeft 50s linear infinite;
+            -o-animation: slideLeft 50s linear infinite;
+            -ms-animation: slideLeft 50s linear infinite;
+            animation: slideLeft 50s linear infinite;
+        }
+        
+        #second {
+            -webkit-animation: slideRight 70s linear infinite;
+            -moz-animation: slideRight 70s linear infinite;
+            -o-animation: slideRight 70s linear infinite;
+            -ms-animation: slideRight 70s linear infinite;
+            animation: slideRight 70s linear infinite;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        main #text h1 {
+            font-size: 6rem;
+        }
+
+        main #text {
+            margin-top: 80px;
+        }
+
+        #about main img {
+            width: 500px;
+        }
+
+        #about main #text p {
+            font-size: 1.5rem;
+        }
+
+        header main #text h1:after {
+            font-size: 2.5rem;
+        }
+
+        header main #download {
+            font-size: 2.6rem;
+        }
+    }
+
+    /* Smartphones */
+    @media only screen and (max-width: 432px) {
+        html, body {
+            overflow-x: hidden;
+        }
+
+        main {
+            flex-direction: column-reverse;
+        }
+
+        header main #text h1:after {
+            font-size: 1.5rem;
+        }
+
+        header main #download {
+            display: block;
+            width: 180px;
+            height: 40px;
+            font-size: 1.6rem;
+            float: none;
+            margin-top: 60px;
+            margin-bottom: 50px;
+        }
+
+        header main #image img{
+            width: 400px;
+        }
+
+        main #text h1 {
+            font-size: 3.6rem;
+        }
+
+        header main #text p {
+            display: none;
+        }
+
+        #first, #second {
+            height: 470px;
+        }
+
+        #about h1 {
+            padding-top: 100px;
+            font-size: 4rem;
+        }
+
+        #about main img {
+            max-width: 90%;
+        }
+
+        #about main #text h1 {
+            font-size: 2rem;
+        }
+
+        #about main #text p {
+            font-size: 1rem;
+            text-align: center;
+            padding: 0px 25px;
+        }
+
+        .banner {
+            height: 320px;
+        }
+
+        .banner h1 {
+            font-size: 2rem;
+        }
+
+        .banner p {
+            font-size: 1rem;
+        }
+
+        .banner:nth-of-type(odd) #text {
+            padding: 20px;
+            margin-right: 0px;
+            text-align: center;
+        }
+
+        .banner:nth-of-type(even) #text {
+            padding: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
+
+        #news {
+            padding-top: 100px;
+        }
+
+        .newsItem {
+            margin-bottom: 30px;
+        }
+
+        .newsHeader {
+            font-size: 4rem;
+            margin: 0 0 30px 0;
+        }
+
+        .newsImage {
+            width: 300px;
+            height: auto;
+        }
+
+        .newsText {
+            max-width: 350px;
+            text-align: center;
+            padding: 0px 20px;
+        }
+
+        footer h1 {
+            font-size: 1.5rem;
+        }
+
+        #socials {
+            width: 90%;
+        }
+
+        footer .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media only screen and (max-width: 375px) {
+        #about main {
+            align-items: center;
+            height: 75%;
+        }
+
+        #about h1 {
+            padding-top: 50px;
+            font-size: 3.5rem;
+        }
+
+        #about main #text p {
+            padding: 0px 25px;
+        }
+
+        .banner {
+            height: 260px;
+        }
+
+        .banner h1 {
+            font-size: 1.5rem;
+        }
+
+        .banner p {
+            font-size: 1.0rem;
+        }
+
+        .newsItemHeader {
+            font-size: 1.5rem;
+        }
+
+        .newsContent {
+            font-size: 0.6rem;
+        }
+    }
+
+    /* ----- RESPONSIVE LANDSCAPE ----- */
+    @media only screen 
+    and (min-device-width : 1024px) 
+    and (max-device-width : 1366px) 
+    and (orientation : landscape) { 
+
+        header main #image img {
+            width: 450px;
+        }
+
+        main #text {
+            margin-top: 50px;
+        }
+
+        main #text p {
+            display: none;
+        }
+
+        #about main h1 {
+            font-size: 3.5rem;
+        }
+
+        #about main #text p {
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .banner h1 {
+            font-size: 3.5rem;
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+        }
+
+        .banner {
+            height: 320px;
+        }
+
+        #news {
+            padding: 100px 0px;
+        }
+    }
+
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 864px) 
+    and (orientation : landscape) { 
+
+        main {
+            flex-direction: row;
+        }
+
+        /* @supports (-webkit-appearance:none) {
+            header {
+                height: 100vh; 
+                height: calc(var(--vh, 1vh) * 100);
+            }
+        } */
+
+        header main #image img {
+            width: 250px;
+        }
+
+        #about main {
+            flex-direction: column-reverse;
+            height: 100vh;
+        }
+
+        #about h1 {
+            padding: 40px 0px;
+        }
+
+        #about main img {
+            width: 100%;
+        }
+
+        #about main #image {
+            width: 50%;
+        }
+
+        #about main #text h1 {
+            font-size: 2.5rem;
+            padding: 40px 0 0 0;
+        }
+
+        #about main #text p {
+            font-size: 1rem;
+        }
+
+        main #text h1 {
+            font-size: 4rem;
+        }
+
+        header main #text h1:after {
+            font-size: 1.8rem;
+        }
+        
+        main #text {
+            margin-top: 0;
+        }
+
+        header main #download {
+            height: 60px;
+            width: 200px;
+            font-size: 1.6rem;
+        }
+
+        #first, #second {
+            height: 320px;
+        }
+
+        #banners {
+            padding-top: 250px;
+        }
+
+        .banner {
+            height: 150px;
+        }
+
+        .banner h1 {
+            font-size: 1.75rem;
+        }
+
+        .banner p {
+            font-size: 1rem;
+        }
+
+        #overlay_bottom {
+            margin-top: 425px;
+        }
+
+        .newsImage {
+            height: 180px;
+            width: 300px;
+        }
+
+        footer .copyright {
+            font-size: 0.8rem;
+        }
+    }
+{% endblock %}
