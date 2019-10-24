@@ -66,7 +66,6 @@
 
     #banners {
         .banner {
-
             #text {
                 h1 {
                     font-size: 3.75rem;
@@ -157,11 +156,14 @@
 
     #about {
         main {
-            img {
-                width: 500px;
+            #image {
+                img {
+                    width: 500px;
+                }
             }
 
             #text {
+                margin-top: 80px;
                 p {
                     font-size: 1.5rem;
                 }
@@ -200,6 +202,7 @@
         main {
             #text {
                 h1 {
+                    font-size: 4rem;
                     &:after {
                         font-size: 1.5rem;
                     }
@@ -239,20 +242,22 @@
         }
 
         main {
-            img {
-                max-width: 90%;
+            #text {
+                h1 {
+                    font-size: 2rem;
+                }
+    
+                p {
+                    font-size: 1rem;
+                    text-align: center;
+                    padding: 0px 25px;
+                }
             }
-        }
 
-        #text {
-            h1 {
-                font-size: 2rem;
-            }
-
-            p {
-                font-size: 1rem;
-                text-align: center;
-                padding: 0px 25px;
+            #image {
+                img {
+                    max-width: 90%;
+                }
             }
         }
     }
@@ -261,13 +266,15 @@
         .banner {
             height: 320px;
     
-            h1 {
-                font-size: 2rem;
-            }
-    
-            p {
-                font-size: 1rem;
-            }    
+            #text {
+                h1 {
+                    font-size: 2rem;
+                }
+        
+                p {
+                    font-size: 1rem;
+                }  
+            }  
     
             &:nth-of-type(odd) #text {
                 padding: 20px;
@@ -326,21 +333,31 @@
 }
 
 @media only screen and (max-width: 375px) {
+    header {
+        main {
+            #text {
+                h1 {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+
     #about {
         main {
             align-items: center;
             height: 75%;
+        
+            #text {
+                p {
+                    padding: 0px 25px;
+                }
+            }
         }
 
         h1 {
             padding-top: 50px;
             font-size: 3.5rem;
-        }
-
-        #text {
-            p {
-                padding: 0px 25px;
-            }
         }
     }
 
@@ -474,6 +491,17 @@ and (orientation : landscape) {
             flex-direction: column-reverse;
             height: 100vh;
 
+            #text {
+                h1 {
+                    font-size: 2.5rem;
+                    padding: 40px 0 0 0;
+                }
+    
+                p {
+                    font-size: 1rem;
+                }
+            }
+
             img {
                 width: 100%;
             }
@@ -485,17 +513,6 @@ and (orientation : landscape) {
 
         h1 {
             padding: 40px 0px;
-        }
-
-        #text {
-            h1 {
-                font-size: 2.5rem;
-                padding: 40px 0 0 0;
-            }
-
-            p {
-                font-size: 1rem;
-            }
         }
     }
 
